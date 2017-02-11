@@ -1,6 +1,7 @@
 const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
+const port = process.env.PORT || 3000;
 
 var app = express();
 //carpeta views es la carpeta donde van los archivos de la web es forzosos la carpeta views
@@ -61,6 +62,6 @@ app.get('/bad', (req, res)=>{
   res.send({errorMessage:'Unable to fulfill the task'});
 });
 
-app.listen(3000, ()=>{
-  console.log('the page is ready on port 3000');
+app.listen(port, ()=>{
+  console.log(`the page is ready on port ${port}`);
 });//puerto donde se va mostrar la app escribe en el borwser localhost:3000
