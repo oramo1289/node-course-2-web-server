@@ -44,17 +44,23 @@ app.get('/', (req, res) => {
       'comics'
     ]*/
 
-    res.render('home.hbs', { //carga los archivos
-      pageTitle: 'Home Page',
-      welcomeM: 'Welcome Message'
-    });
-  });//cuando pasas un objeto por express este lo convierte en JSON y lo muestra en el browser
+  res.render('home.hbs', { //carga los archivos
+    pageTitle: 'Home Page',
+    welcomeM: 'Welcome Message'
+  });
+});//cuando pasas un objeto por express este lo convierte en JSON y lo muestra en el browser
 
 
 app.get('/about', (req, res)=>{
   //res.send('about page');
   res.render('about.hbs', {
-    pageTitle: 'About Page',
+    pageTitle: 'About Page'
+  });
+});
+
+app.get('/projects', (req, res)=>{
+  res.render('projects.hbs', {
+    pageTitle: 'Portfolio page'
   });
 });
 
